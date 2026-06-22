@@ -1,55 +1,129 @@
-# CRUD de Clientes
+# 👥 Projeto CRUD de Clientes
 
-Aplicação desenvolvida em Java para realizar o cadastro e gerenciamento de clientes via terminal. O projeto foi criado com foco em praticar conceitos de Programação Orientada a Objetos, operações de CRUD e organização de uma aplicação em camadas.
+Aplicação desenvolvida em Java para gerenciamento de clientes utilizando JDBC e PostgreSQL.
 
-## 🚀 Tecnologias utilizadas
-- Java
-- JDBC
-- SQL
+O sistema permite realizar operações completas de CRUD (Create, Read, Update e Delete) através de um menu interativo executado no terminal.
 
-## 📌 Funcionalidades
-- Cadastro de clientes
-- Listagem de clientes
-- Atualização de dados de clientes
-- Exclusão de clientes
-- Execução das operações via terminal
+## 🚀 Tecnologias Utilizadas
 
-## 🧱 Estrutura do projeto
-- `controllers` → responsável pelo fluxo da aplicação
-- `entities` → representa a entidade Cliente
-- `repositories` → responsável pelas operações de persistência
-- `factories` → responsável pela conexão com o banco de dados
-- `sql` → scripts SQL do projeto
-- `main` → ponto de entrada da aplicação
+* Java
+* JDBC
+* PostgreSQL
+* SQL
+* Programação Orientada a Objetos (POO)
 
-## 🎯 Objetivo do projeto
-Este projeto foi desenvolvido com o objetivo de praticar conceitos fundamentais de back-end com Java, como:
-- Programação Orientada a Objetos
-- estruturação de aplicações em camadas
-- operações de CRUD
-- manipulação de dados via terminal
-- persistência de dados com JDBC
+## 📋 Funcionalidades
 
-## ▶️ Como executar o projeto
-1. Clone este repositório:
-```bash
-git clone <PRIVATE_URL>
+* Cadastrar clientes
+* Atualizar clientes
+* Excluir clientes
+* Consultar clientes cadastrados
+* Persistência de dados em banco PostgreSQL
+* Conexão com banco utilizando JDBC
+
+## 🏗️ Estrutura do Projeto
+
+```text
+src
+│
+├── controllers
+│   └── ClienteController
+│
+├── entities
+│   └── Cliente
+│
+├── repositories
+│   └── ClienteRepository
+│
+└── factories
+    └── ConnectionFactory
 ```
 
-2. Abra o projeto em uma IDE Java
+## 📊 Modelo de Dados
 
-3. Configure a conexão com o banco de dados na classe responsável pela conexão
+```sql
+CREATE TABLE clientes(
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    telefone VARCHAR(30) NOT NULL,
+    data_criacao TIMESTAMP NOT NULL DEFAULT NOW()
+);
+```
 
-4. Execute a classe principal do projeto
+## 🖥️ Operações Disponíveis
 
-## 📚 Aprendizados
-Durante o desenvolvimento deste projeto, foram praticados:
-- modelagem de entidades em Java
-- separação de responsabilidades em camadas
-- implementação das operações de cadastro, consulta, edição e exclusão
-- organização de uma aplicação back-end simples
-- integração com banco de dados
+Ao executar a aplicação, o usuário pode escolher entre:
 
-## 👩🏻‍💻 Autora
-Beatriz Lima  
-[GitHub](<PRIVATE_URL>)
+```text
+(1) Cadastrar Cliente
+(2) Atualizar Cliente
+(3) Excluir Cliente
+(4) Consultar Clientes
+```
+
+### Cadastro
+
+Permite registrar um novo cliente informando:
+
+* Nome
+* Email
+* Telefone
+
+### Atualização
+
+Permite alterar os dados de um cliente existente através do ID.
+
+### Exclusão
+
+Remove um cliente cadastrado utilizando seu ID.
+
+### Consulta
+
+Lista todos os clientes cadastrados no banco de dados.
+
+## ⚙️ Configuração do Banco
+
+Crie um banco PostgreSQL chamado:
+
+```text
+bdprojetocliente
+```
+
+Configure as credenciais na classe:
+
+```java
+ConnectionFactory
+```
+
+## ▶️ Executando o Projeto
+
+1. Clone o repositório
+
+```bash
+git clone https://github.com/beatrizlima-tech/projetoCrudCliente.git
+```
+
+2. Configure o banco PostgreSQL
+
+3. Execute a aplicação Java
+
+4. Utilize o menu para gerenciar os clientes
+
+## 🎯 Objetivo do Projeto
+
+Projeto desenvolvido para praticar:
+
+* Operações CRUD
+* JDBC
+* Integração Java com PostgreSQL
+* Estruturação em camadas
+* Programação Orientada a Objetos
+* Manipulação de banco de dados relacional
+
+## 👩‍💻 Desenvolvedora
+
+Beatriz Lima
+
+GitHub:
+https://github.com/beatrizlima-tech
