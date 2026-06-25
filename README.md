@@ -1,45 +1,88 @@
 # 👥 Projeto CRUD de Clientes
 
-Aplicação desenvolvida em Java para gerenciamento de clientes utilizando JDBC e PostgreSQL.
+![Java](https://img.shields.io/badge/Java-21-red?style=for-the-badge\&logo=openjdk)
+![JDBC](https://img.shields.io/badge/JDBC-Database-orange?style=for-the-badge)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue?style=for-the-badge\&logo=postgresql)
+![Build](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)
+![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)
 
-O sistema permite realizar operações completas de CRUD (Create, Read, Update e Delete) através de um menu interativo executado no terminal.
+---
 
-## 🚀 Tecnologias Utilizadas
+# 📌 Sobre o projeto
 
-* Java
+O **Projeto CRUD de Clientes** é uma aplicação Java desenvolvida para gerenciamento de clientes utilizando **JDBC** e **PostgreSQL**.
+
+A aplicação executa operações completas de CRUD (Create, Read, Update e Delete) através de um menu interativo no terminal, aplicando conceitos fundamentais de persistência de dados, SQL e Programação Orientada a Objetos.
+
+Este projeto foi desenvolvido com foco no aprendizado da integração entre aplicações Java e bancos de dados relacionais utilizando SQL puro.
+
+---
+
+# 🚀 Funcionalidades
+
+* Cadastro de clientes
+* Consulta de clientes
+* Atualização de clientes
+* Exclusão de clientes
+* Persistência de dados em PostgreSQL
+* Integração com JDBC
+* Menu interativo no terminal
+
+---
+
+# 🧱 Tecnologias Utilizadas
+
+* Java 21
 * JDBC
 * PostgreSQL
 * SQL
+* Maven
 * Programação Orientada a Objetos (POO)
 
-## 📋 Funcionalidades
+---
 
-* Cadastrar clientes
-* Atualizar clientes
-* Excluir clientes
-* Consultar clientes cadastrados
-* Persistência de dados em banco PostgreSQL
-* Conexão com banco utilizando JDBC
-
-## 🏗️ Estrutura do Projeto
+# 🏗️ Estrutura do Projeto
 
 ```text
-src
-│
+src/
+
 ├── controllers
-│   └── ClienteController
-│
 ├── entities
-│   └── Cliente
-│
-├── repositories
-│   └── ClienteRepository
-│
-└── factories
-    └── ConnectionFactory
+├── factories
+└── repositories
 ```
 
-## 📊 Modelo de Dados
+---
+
+# 📊 Arquitetura
+
+```text
+Usuário
+    │
+    ▼
+Controller
+    │
+    ▼
+Repository
+    │
+    ▼
+JDBC
+    │
+    ▼
+PostgreSQL
+```
+
+---
+
+# 🗄️ Banco de Dados
+
+Banco utilizado:
+
+```text
+PostgreSQL
+```
+
+Criação da tabela:
 
 ```sql
 CREATE TABLE clientes(
@@ -51,9 +94,11 @@ CREATE TABLE clientes(
 );
 ```
 
-## 🖥️ Operações Disponíveis
+---
 
-Ao executar a aplicação, o usuário pode escolher entre:
+# ⚙️ Operações Disponíveis
+
+Ao iniciar a aplicação, o usuário poderá escolher uma das opções:
 
 ```text
 (1) Cadastrar Cliente
@@ -62,68 +107,70 @@ Ao executar a aplicação, o usuário pode escolher entre:
 (4) Consultar Clientes
 ```
 
-### Cadastro
+---
 
-Permite registrar um novo cliente informando:
+# ⚙️ Como Executar o Projeto
 
-* Nome
-* Email
-* Telefone
-
-### Atualização
-
-Permite alterar os dados de um cliente existente através do ID.
-
-### Exclusão
-
-Remove um cliente cadastrado utilizando seu ID.
-
-### Consulta
-
-Lista todos os clientes cadastrados no banco de dados.
-
-## ⚙️ Configuração do Banco
-
-Crie um banco PostgreSQL chamado:
-
-```text
-bdprojetocliente
-```
-
-Configure as credenciais na classe:
-
-```java
-ConnectionFactory
-```
-
-## ▶️ Executando o Projeto
-
-1. Clone o repositório
+## 1. Clonar o repositório
 
 ```bash
 git clone https://github.com/beatrizlima-tech/projetoCrudCliente.git
 ```
 
-2. Configure o banco PostgreSQL
+---
 
-3. Execute a aplicação Java
+## 2. Criar o banco de dados
 
-4. Utilize o menu para gerenciar os clientes
+```sql
+CREATE DATABASE bdprojetocliente;
+```
 
-## 🎯 Objetivo do Projeto
+Execute também o script de criação da tabela disponível no projeto.
 
-Projeto desenvolvido para praticar:
+---
 
-* Operações CRUD
+## 3. Configurar a conexão
+
+Atualize as credenciais na classe **ConnectionFactory**.
+
+---
+
+## 4. Executar a aplicação
+
+Abra o projeto em uma IDE Java (IntelliJ IDEA, Eclipse ou VS Code) e execute a classe principal.
+
+---
+
+# 📚 Conceitos Aplicados
+
+* Programação Orientada a Objetos (POO)
+* CRUD
 * JDBC
-* Integração Java com PostgreSQL
-* Estruturação em camadas
-* Programação Orientada a Objetos
+* SQL
+* PostgreSQL
+* Repository Pattern
+* Organização em camadas
 * Manipulação de banco de dados relacional
+* Tratamento de exceções
 
-## 👩‍💻 Desenvolvedora
+---
 
-Beatriz Lima
+# 📌 Melhorias Futuras
 
-GitHub:
+* Migrar JDBC para Spring Data JPA
+* Adicionar validações dos dados
+* Implementar interface gráfica
+* Criar testes automatizados
+* Adicionar documentação da aplicação
+
+---
+
+# 👩‍💻 Autora
+
+Desenvolvido por **Beatriz Lima**
+
+🔗 GitHub
 https://github.com/beatrizlima-tech
+
+💼 LinkedIn
+https://www.linkedin.com/in/beatrizlima-tech
